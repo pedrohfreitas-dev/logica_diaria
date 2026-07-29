@@ -1,4 +1,4 @@
-import veiculos.*;
+package poo.sistema_cobranca_veiculos;
 
 import java.util.ArrayList;
 import java.util.List;

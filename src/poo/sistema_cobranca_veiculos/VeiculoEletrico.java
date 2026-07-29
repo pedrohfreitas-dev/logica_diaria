@@ -1,6 +1,6 @@
 
 
-package veiculos;
+package poo.sistema_cobranca_veiculos;
 
 public class VeiculoEletrico extends Veiculo {
     public VeiculoEletrico(String placa, double distanciaKm) {

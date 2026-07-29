@@ -1,4 +1,4 @@
-package veiculos;
+package poo.sistema_cobranca_veiculos;
 
 public abstract class Veiculo {
 

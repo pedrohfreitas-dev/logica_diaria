@@ -1,4 +1,4 @@
-package veiculos;
+package poo.sistema_cobranca_veiculos;
 
 public class Moto extends Veiculo {
 
