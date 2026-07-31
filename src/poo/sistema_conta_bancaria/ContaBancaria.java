@@ -10,6 +10,7 @@ public class ContaBancaria {
         this.saldo = saldo;
     }
 
+
     public double getSaldo() {
         return saldo;
     }
@@ -34,5 +35,10 @@ public class ContaBancaria {
         return valor;
     }
 
-
+    public void depositar(double valor) {
+        if (valor <= 0) {
+            System.out.println("Valor insuficiente");
+        }
+        this.saldo = this.saldo + valor;
+    }
 }
