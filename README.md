@@ -8,6 +8,8 @@ repo pra treinar logica e POO em java, um exercicio por dia
 
 02 - sistema_bonus_funcionario: calculo de bonus de funcionario, mas usando composicao em vez de heranca (interface CalculadoraBonus)
 
+03 - sistema_transações_bancarias: saque e deposito, usando encapsulamento
+
  rodar
 
 cada pasta tem sua propria Main.java, roda direto sem precisar de maven nem nada
