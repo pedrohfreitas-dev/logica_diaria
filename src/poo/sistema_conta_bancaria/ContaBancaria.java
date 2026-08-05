@@ -10,7 +10,7 @@ public class ContaBancaria {
 
     public ContaBancaria(String titular, double saldo) {
         if (saldo < 0) {
-            throw new IllegalArgumentException("Saldo inicial não pode ser negativo");
+            throw new ValorInvalidoException("Saldo inicial não pode ser negativo");
         }
         this.titular = titular;
         this.saldo = saldo;
