@@ -1,5 +1,8 @@
 package poo.sistema_conta_bancaria;
 
+import poo.sistema_conta_bancaria.exceptions.SaldoInsuficienteException;
+import poo.sistema_conta_bancaria.exceptions.ValorInvalidoException;
+
 public class ContaBancaria {
 
     private String titular;
@@ -26,8 +29,11 @@ public class ContaBancaria {
     }
 
     public double sacar(double valor){
-        if (valor <= 0 || this.saldo < valor) {
-            throw new IllegalArgumentException();
+        if (valor <= 0) {
+            throw new ValorInvalidoException("Valor inválido");
+        }
+        if (valor > this.saldo) {
+            throw new SaldoInsuficienteException("Saldo insuficiente");
         }
         this.saldo = this.saldo - valor;
         return valor;
@@ -35,7 +41,7 @@ public class ContaBancaria {
 
     public void depositar(double valor) {
         if (valor <= 0) {
-            throw new IllegalArgumentException();
+            throw new ValorInvalidoException("Valor Inválido");
         }
         this.saldo = this.saldo + valor;
     }
