@@ -1,9 +1,7 @@
 package poo.sistema_cadastro_produtos.repository;
 
+import poo.sistema_cadastro_produtos.exceptions.ProdutoNaoEncontradoException;
 import poo.sistema_cadastro_produtos.model.Produto;
-import poo.sistema_cadastro_produtos.service.ProdutoService;
-
-import javax.swing.plaf.ProgressBarUI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,19 +12,25 @@ public class ProdutoRepository {
 
     int contador = 0;
 
-    public int salvar(Produto produto) {
+    public Produto salvar(Produto produto) {
         listaProdutos.add(produto);
         int idproduto = ++contador;
         produto.setId(idproduto);
-        return produto.getId();
+        return produto;
     }
 
     public List<Produto> listarTodos() {
       return listaProdutos;
     }
 
-
-
+    public Produto buscarPorId(int id) {
+        for (Produto produto : listaProdutos) {
+            if (id == produto.getId()) {
+                return produto;
+            }
+        }
+        throw new ProdutoNaoEncontradoException("Produto não encontrado");
+    }
 
 
 
