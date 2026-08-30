@@ -23,4 +23,8 @@ public class ProdutoService {
         throw new ValorInvalidoException("Valor Inválido");
     }
 
+    public Produto buscar(int id) {
+        return repository.buscarPorId(id);
+    }
+
 }
